@@ -20,20 +20,24 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get('.btn-group-toggle > *').filter('.active').should('contain', 'Button-1')
   });
 
-  it.only("find() to retrieve DOM elements of a given selector", () => {
+  it("find() to retrieve DOM elements of a given selector", () => {
     cy.get('.traversal-pagination').find('li').find('a').should('have.length', 7)
   });
 
   it("first() to retrieve the first DOM element within elements ", () => {
+    cy.get('.traversal-table > tbody > tr > td').first().should('have.text', 'Andy')
   });
 
   it("last() to retrieve the last DOM element within elements", () => {
+    cy.get('.traversal-table > tbody > tr > td').last().should('have.text', 'Scott')
   });
 
   it("nextAll() to get all of the next sibling DOM elements within elements", () => {
+    cy.get(".traversal-drinks-list").contains('Tea').nextAll().should('have.length', 3)
   });
 
-  it("nextUntil() to get all of the next sibling DOM elements within elements until another element", () => {
+  it.only("nextUntil() to get all of the next sibling DOM elements within elements until another element", () => {
+    cy.get('#coffee').nextUntil('#milk').should('contain', "Tea")
   });
 
   it("not() to remove DOM element(s) from the set of elements", () => {
