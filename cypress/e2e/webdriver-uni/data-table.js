@@ -20,5 +20,18 @@ describe("Handling data via webdriverunit", () => {
         })
 
     });
+    it("Caclculate and assert the age of given user based on last name", () => {
+
+        cy.get('#thumbnail-1 tr td:nth-child(2)').each(($el, index) => {
+            const text = $el.text()
+            if (text.includes("Woods")) {
+                cy.get('#thumbnail-1 tr td:nth-child(2)').eq(index).next().then((age) => {
+                    const userAge = age.text()
+                    expect(userAge).to.equal("80")
+                })
+            }
+        })
+
+    });
 
 });
