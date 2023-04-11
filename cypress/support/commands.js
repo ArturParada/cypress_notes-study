@@ -30,6 +30,9 @@ Cypress.Commands.add("selectProduct", productName => {
         }
     })
 })
+Cypress.Commands.add("navigateToWebdriverUniHomaePage", () => {
+    cy.visit("/")
+})
 
 Cypress.Commands.add("addProductToBasket", productName => {
     cy.get('.fixed_wrapper .prdocutname').each(($el, index, $list) => {
