@@ -37,7 +37,7 @@ Cypress.Commands.add("addProductToBasket", productName => {
             cy.get('.productcart').eq(index).click()
         }
     })
-    // cy.get('.block_7 > .nav > .dropdown > .dropdown-toggle').click()
+
 })
 
 Cypress.Commands.add('contactFormSubmission', (firstName, lastName, email, comments, $selector, textToLocate) => {
