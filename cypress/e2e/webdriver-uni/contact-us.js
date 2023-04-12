@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+import HomePage_PO from "../../support/PageObject/webdrivwer-uni/HomePage_PO"
 
 describe("Test Contact Us form via WebdriverUni", () => {
     before(function () {
@@ -9,8 +9,9 @@ describe("Test Contact Us form via WebdriverUni", () => {
         })
     })
     beforeEach(() => {
-        cy.visit("/Contact-Us/contactus.html")
-        // cy.get("#contact-us").invoke('removeAttr', 'target').click({ force: true })
+        const homePage_PO = new HomePage_PO
+        homePage_PO.visitHomePage()
+        homePage_PO.clickOnContactUsButton()
     })
     it("Should be able to submit a successful submission via contact us form", () => {
         // cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
