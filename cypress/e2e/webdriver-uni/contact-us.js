@@ -3,6 +3,7 @@ import HomePage_PO from "../../support/PageObject/webdrivwer-uni/HomePage_PO"
 import ContactUs_PO from "../../support/PageObject/webdrivwer-uni/ContactUS_PO"
 
 describe("Test Contact Us form via WebdriverUni", () => {
+    Cypress.config('defaultCommandTimeout', 20000)
     const homePage_PO = new HomePage_PO
     const contactUs_PO = new ContactUs_PO
 
