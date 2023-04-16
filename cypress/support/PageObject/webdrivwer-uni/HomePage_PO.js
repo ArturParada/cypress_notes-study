@@ -1,9 +1,12 @@
 class HomePage_PO {
+    get contactUsBTN() {
+        return cy.get(("#contact-us"))
+    }
     visitHomePage() {
         cy.visit(Cypress.env("webdriver_uni_home"), { timeout: 6000 })
     }
     clickOnContactUsButton() {
-        cy.get("#contact-us").invoke('removeAttr', 'target').click({ force: true })
+        this.contactUsBTN.invoke('removeAttr', 'target').click({ force: true })
     }
 }
 export default HomePage_PO

@@ -1,9 +1,13 @@
 class AutoStoreHairCarePO {
+    get dropDownBasket() {
+        return cy.get('.dropdown-toggle > .fa')
+    }
+
     addHaireCareProduct() {
         data.productName.forEach(element => {
             cy.addProductToBasket(element)
         });
-        cy.get('.dropdown-toggle > .fa').click()
+        this.dropDownBasket.click()
     }
 }
 

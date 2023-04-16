@@ -1,12 +1,13 @@
 class AutoStoreHomePage {
-
+    get productCategory() {
+        return cy.get("a[href*='product/category&path=']")
+    }
     accessHomePage() {
         cy.visit("https://automationteststore.com/");
     }
     clickOnHaireCareLink() {
-        cy.get("a[href*='product/category&path=']").contains("Hair Care").click();
+        this.productCategory.contains("Hair Care").click();
     }
-
 }
 
 export default AutoStoreHomePage
