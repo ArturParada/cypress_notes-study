@@ -6,6 +6,7 @@ class ContactUs_PO {
         cy.get('textarea.feedback-input').type(comments)
         cy.get('[type="submit"]').click();
         cy.get($selector).contains(textToLocate)
+        cy.screenshot("contactUS")
     }
 
 }

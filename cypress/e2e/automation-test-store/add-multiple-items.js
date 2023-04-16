@@ -12,7 +12,7 @@ describe("Add multiple items to basket", () => {
     })
 
     beforeEach(() => {
-        autostoreHomePagePO.acessHomePage()
+        autostoreHomePagePO.accessHomePage()
         autostoreHomePagePO.clickOnHaireCareLink()
     })
 
