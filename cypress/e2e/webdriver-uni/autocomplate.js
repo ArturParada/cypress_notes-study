@@ -1,32 +1,15 @@
 /// <reference types="cypress" />
+import HomePage_PO from "../../support/PageObject/webdrivwer-uni/HomePage_PO";
+import AutoComplateText_PO from "../../support/PageObject/automation-test-store/AutocomplateTextField_PO";
 
 describe("Veryfi autocomplete", () => {
     it("Select specyfic product", () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get("#autocomplete-textfield").invoke('removeAttr', 'target').click({ force: true })
-        cy.get('#myInput').type('A')
-        cy.get('#myInputautocomplete-list > *').each(($el) => {
-            const product = $el.text()
-            const productSelected = 'Avacado'
-            if (product === productSelected) {
-                cy.wrap($el).click()
-                cy.get('#submit-button').click()
-                cy.url().should('include', product)
-            }
-        }).then(() => {
-            cy.get('#myInput').type('G')
-            cy.get('#myInputautocomplete-list > *').each(($el) => {
-                const product = $el.text()
-                const productSelected = 'Grapes'
-                if (product === productSelected) {
-                    cy.wrap($el).click()
-                    cy.get('#submit-button').click()
-                    cy.url().should('include', product)
-                }
-            })
-        })
-
-
+        const homPagePO = new HomePage_PO
+        const autoComplateTextPO = new AutoComplateText_PO
+        homPagePO.visitHomePage()
+        autoComplateTextPO.goAutocompeltePageAndRemoveTarget()
+        autoComplateTextPO.typeLetterToSearchBar()
+        autoComplateTextPO.autoComplete()
     });
 
 });

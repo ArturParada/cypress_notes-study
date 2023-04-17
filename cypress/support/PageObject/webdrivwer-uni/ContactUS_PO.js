@@ -14,6 +14,9 @@ class ContactUs_PO {
     get submitBTN() {
         return cy.get('[type="submit"]')
     }
+    chooseSelector($selector) {
+        return cy.get($selector)
+    }
 
     contactFormSubmission(firstName, lastName, email, comments, $selector, textToLocate) {
         this.firstName.type(firstName);
@@ -21,7 +24,7 @@ class ContactUs_PO {
         this.email.type(email)
         this.comment.type(comments)
         this.submitBTN.click();
-        cy.get($selector).contains(textToLocate)
+        this.chooseSelector($selector).contains(textToLocate)
         cy.screenshot("contactUS")
     }
 
