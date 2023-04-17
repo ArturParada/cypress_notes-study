@@ -1,4 +1,8 @@
 class HomePage_PO {
+    visitDropDownChceckboxesRadiobuttonsPage() {
+        cy.get("#dropdown-checkboxes-radiobuttons").invoke('removeAttr', 'target').click({ force: true })
+    }
+
 
     visitHomePage() {
         // cy.visit(Cypress.env("webdriver_uni_home"), { timeout: 6000 })
