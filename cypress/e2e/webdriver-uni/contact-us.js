@@ -14,7 +14,7 @@ describe("Test Contact Us form via WebdriverUni", () => {
     })
     beforeEach(() => {
         homePage_PO.visitHomePage()
-        homePage_PO.clickOnContactUsButton()
+        contactUs_PO.clickOnContactUsButton()
     })
     it("Should be able to submit a successful submission via contact us form", () => {
         cy.document().should('have.property', 'charset').and('eq', 'UTF-8');

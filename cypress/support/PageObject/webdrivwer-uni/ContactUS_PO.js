@@ -17,6 +17,12 @@ class ContactUs_PO {
     chooseSelector($selector) {
         return cy.get($selector)
     }
+    get contactUsBTN() {
+        return cy.get(("#contact-us"))
+    }
+    clickOnContactUsButton() {
+        this.contactUsBTN.invoke('removeAttr', 'target').click({ force: true })
+    }
 
     contactFormSubmission(firstName, lastName, email, comments, $selector, textToLocate) {
         this.firstName.type(firstName);
