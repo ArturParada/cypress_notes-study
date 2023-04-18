@@ -36,4 +36,4 @@ class ContactUs_PO {
 
 }
 
-export default ContactUs_PO
+export default new ContactUs_PO()

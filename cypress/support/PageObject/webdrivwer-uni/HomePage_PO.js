@@ -10,4 +10,4 @@ class HomePage_PO {
     }
 
 }
-export default HomePage_PO
+export default new HomePage_PO()

@@ -1,29 +1,25 @@
 /// <reference types="cypress" />
-
+import HomePage_PO from "../../support/PageObject/webdrivwer-uni/HomePage_PO";
+import CheckBoxes_PO from "../../support/PageObject/webdrivwer-uni/CheckBoxes_PO";
 describe("Verify checkboxes", () => {
-
     beforeEach(() => {
-        cy.navigateToWebdriverUniHomaePage()
-        cy.get("#dropdown-checkboxes-radiobuttons").invoke('removeAttr', 'target').click({ force: true })
+        HomePage_PO.visitHomePage()
+        HomePage_PO.visitDropDownChceckboxesRadiobuttonsPage()
     })
 
     it("Check and validate checkbox ", () => {
-        cy.get('#checkboxes > :nth-child(1) > input').as('option-1')
-        cy.get('@option-1').check().should('be.checked')
+        CheckBoxes_PO.chooseChceckboxe(1)
 
     });
     it("Uncheck and validate checkbox ", () => {
-        cy.get(':nth-child(5) > input').as('option-3')
-        cy.get("@option-3").uncheck().should('not.be.checked')
+        CheckBoxes_PO.uncheckAndValid()
 
     });
     it("Select multiple checkboxes ", () => {
-        cy.get("input[type='checkbox']").check(["option-1", "option-2", "option-3", "option-4"]).should('be.checked')
+        CheckBoxes_PO.selectMultiCheckboxe()
     })
     it("Select multiple checkboxes ", () => {
-        cy.get("input[type='checkbox']").each($check => {
-            cy.wrap($check).click()
-        })
+        CheckBoxes_PO.selectMultiCheckboxeViaEach
 
     })
 
