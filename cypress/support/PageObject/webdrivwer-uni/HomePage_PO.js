@@ -36,8 +36,5 @@ class HomePage_PO {
         this.toDoList.invoke('removeAttr', 'target').click()
     }
 
-
-
-
 }
 export default new HomePage_PO()
