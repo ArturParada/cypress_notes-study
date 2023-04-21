@@ -19,7 +19,7 @@ describe("Verify checkboxes", () => {
         CheckBoxes_PO.selectMultiCheckboxe()
     })
     it("Select multiple checkboxes ", () => {
-        CheckBoxes_PO.selectMultiCheckboxeViaEach
+        CheckBoxes_PO.selectMultiCheckboxeViaEach()
 
     })
 
