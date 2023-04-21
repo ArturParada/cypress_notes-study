@@ -1,27 +1,25 @@
 /// <reference types="cypress" />
 import HomePage_PO from "../../support/PageObject/webdrivwer-uni/HomePage_PO";
 describe("Validate webdriveruni hompage links WebdriverUni", () => {
-    const homPagePO = new HomePage_PO
+
     it("Confirm links redirect to the correct pages", () => {
         // cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
-        homPagePO.visitHomePage()
-        cy.get("#contact-us").invoke('removeAttr', 'target').click({ force: true })
-        cy.url().should('include', 'contactus')
+        HomePage_PO.visitHomePage()
+        HomePage_PO.visitContacUSPage()
+        HomePage_PO.urlValidation("Contact-Us")
 
-        cy.go('back')
-        cy.reload(true) //reload without cashe
-        cy.url().should('include', 'http://www.webdriveruniversity.com')
-
+        HomePage_PO.goBackAndReloadWithOutCashe()
+        HomePage_PO.urlValidation('http://www.webdriveruniversity.com')
         cy.go('forward')
-        cy.url().should('include', 'contactus')
+        HomePage_PO.urlValidation("Contact-Us")
 
         cy.go('back')
-        cy.get("#login-portal").invoke('removeAttr', 'target').click({ force: true })
-        cy.url().should('include', 'Login-Portal')
+        HomePage_PO.visitLoginPortalPage()
+        HomePage_PO.urlValidation("Login-Portal")
 
         cy.go('back')
-        cy.get('#to-do-list').invoke('removeAttr', 'target').click()
-        cy.url().should('include', 'To-Do-List')
+        HomePage_PO.visitToDoListPage()
+        HomePage_PO.urlValidation('To-Do-List')
         cy.go('back')
 
     });
