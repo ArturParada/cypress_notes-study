@@ -3,7 +3,6 @@ import HomePage_PO from "../../support/PageObject/webdrivwer-uni/HomePage_PO";
 describe("Validate webdriveruni hompage links WebdriverUni", () => {
 
     it("Confirm links redirect to the correct pages", () => {
-        // cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
         HomePage_PO.visitHomePage()
         HomePage_PO.visitContacUSPage()
         HomePage_PO.urlValidation("Contact-Us")

@@ -35,4 +35,4 @@ class AutoComplateText_PO {
     }
 }
 
-export default AutoComplateText_PO
+export default new AutoComplateText_PO()

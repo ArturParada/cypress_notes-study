@@ -4,7 +4,7 @@
   "description": "Cypress Automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "allScript":"npx cypress run"
   },
   "author": "",
   "license": "ISC",
