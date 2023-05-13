@@ -7,7 +7,7 @@ describe("Add multiple items to basket", () => {
 
     before(function () {
         cy.fixture('products').then((data) => {
-            globalThis.data = data
+            globalThis.cos = data
         })
     })
 

@@ -4,7 +4,7 @@ class AutoStoreHairCarePO {
     }
 
     addHaireCareProduct() {
-        data.productName.forEach(element => {
+        cos.productName.forEach(element => {
             cy.addProductToBasket(element)
         });
         this.dropDownBasket.click()
