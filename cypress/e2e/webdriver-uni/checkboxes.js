@@ -22,5 +22,13 @@ describe("Verify checkboxes", () => {
         CheckBoxes_PO.selectMultiCheckboxeViaEach()
 
     })
+    // it("Select multiple checkboxes ", () => {
+    //     const checkboxes = cy.get("input[type='checkbox']")
+    //     checkboxes.each(($checkboxes) => {
+    //         cy.wrap($checkboxes).click()
+    //     })
+
+    // })
+
 
 });

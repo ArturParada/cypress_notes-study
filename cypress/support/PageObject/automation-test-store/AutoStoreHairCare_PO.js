@@ -4,6 +4,7 @@ class AutoStoreHairCarePO {
     }
 
     addHaireCareProduct() {
+        //cos zdefiniowane  w add-multiple-items , productName to data z jsona
         cos.productName.forEach(element => {
             cy.addProductToBasket(element)
         });
